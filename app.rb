@@ -7,6 +7,10 @@ class UrlShortenerApp < Sinatra::Base
     @u_shortener = UrlShortener.instance
   end
 
+  get '/:short_url' do
+    redirect "#{@u_shortener.saved_urls[params[:short_url]]}", 301
+  end
+
   post '/' do
     url = JSON.parse(request.body.read)
     short_url = @u_shortener.create_new(url['url'])
