@@ -10,6 +10,11 @@ class UrlShortener
     return surl
   end
 
+  def self.instance
+    @game ||= UrlShortener.new
+    @game
+  end
+
   private
 
   def extract_short(url)
