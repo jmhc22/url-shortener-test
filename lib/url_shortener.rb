@@ -1,6 +1,6 @@
 class UrlShortener
 
   def create_new(url)
-    'frm111'
+    url.split('.')[1].tr('aeiou', '')[0..2] + Array.new(3) { rand(9).to_s }.join
   end
 end
