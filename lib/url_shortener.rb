@@ -6,6 +6,7 @@ class UrlShortener
 
   def create_new(url)
     surl = extract_short(url)
+    url = 'http://' + url if !url.include? 'http'
     @saved_urls[surl] = url
     return surl
   end

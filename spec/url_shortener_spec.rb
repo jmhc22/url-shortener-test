@@ -30,6 +30,12 @@ describe UrlShortener do
       it "returns short url 'ggl111' when passed google's url without 'www.'" do
         expect(subject.create_new('http://www.google.com')).to eq('ggl111')
       end
+
+      it "adds 'http://' to the full url if missed off when passed as argument" do
+        short_url = subject.create_new('www.farmdrop.com')
+        expect(short_url).to eq('frm111')
+        expect(subject.saved_urls[short_url]).to eq('http://www.farmdrop.com')
+      end
     end
   end
 end
