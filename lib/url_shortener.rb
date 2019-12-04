@@ -13,7 +13,9 @@ class UrlShortener
   private
 
   def extract_short(url)
-    url.split('.')[1].tr('aeiou', '')[0..2] + short_url_nums
+    url.sub('http://', '').split('.').select {
+      |u| u.length > 3
+    }.join.tr('aeiou', '')[0..2] + short_url_nums
   end
 
   def short_url_nums
