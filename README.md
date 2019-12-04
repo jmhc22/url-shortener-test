@@ -71,14 +71,14 @@ JavaScript/jQuery
 
 | Classes    | Methods |
 | -------- | ------- |
-| UrlShortener  | create_new, short_url_library |
+| UrlShortener  | create_new, saved_urls |
 
 Short URLs contain three letters followed by three numbers. The letters are the first three consonants of the website name and the numbers are randomly generated. This makes the short urls recognisable and means two links from the same website but for different pages will be uniform.
 
 ```ruby
 {
   'frm287' => 'http://www.farmdrop.com', #randomly generated numbers are stubbed in tests
-  'ggl353' => 'http://www.google.com', 
+  'ggl353' => 'http://www.google.com',
   'ggl147' => 'http://www.google.com/imghp',
   'fcb229' => 'http://facebook.com', #create_new method works with or without the 'www.'
   'wkp523' => 'http://en.wikipedia.org/wiki/Main_Page'
