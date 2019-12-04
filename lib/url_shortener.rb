@@ -5,9 +5,9 @@ class UrlShortener
   end
 
   def create_new(url)
-    surl = extract_short(url)
-    @saved_urls[surl] = verify(url)
-    return surl
+    short = extract_short(url)
+    @saved_urls[short] = verify(url)
+    return short
   end
 
   def self.instance
@@ -18,8 +18,8 @@ class UrlShortener
   private
 
   def extract_short(url)
-    return url.sub('http://', '').split('.').select { |u|
-      u.length > 3
+    return remove_http(url).split('.').select { |url_component|
+      url_component.length > 3
     }.join.tr('aeiou', '')[0..2] + short_url_nums
   end
 
@@ -29,5 +29,9 @@ class UrlShortener
 
   def verify(url)
     return url.include?('http') ? url : 'http://' + url
+  end
+
+  def remove_http(url)
+    return url.sub('http://', '').sub('https://', '')
   end
 end

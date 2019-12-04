@@ -20,6 +20,12 @@ describe UrlShortener do
         short_url = subject.create_new('http://www.farmdrop.com')
         expect(subject.saved_urls[short_url]).to eq('http://www.farmdrop.com')
       end
+
+      it "also accepts urls with 'https' rather than 'http'" do
+        short_url = subject.create_new('https://www.farmdrop.com')
+        expect(short_url).to eq('frm111')
+        expect(subject.saved_urls[short_url]).to eq('https://www.farmdrop.com')
+      end
     end
 
     context "url is missing either 'http://' and/or 'www.'" do
