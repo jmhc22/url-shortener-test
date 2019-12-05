@@ -12,7 +12,7 @@ First, clone this repository. Then:
 > bundle install
 
 > bundle exec rspec #to run unit and integration tests
-> rackup #to launch the server (visit localhost:/9292)
+> rackup #to launch the server (visit localhost:9292)
 ```
 Note: Integration tests by default run using Firefox.
 
@@ -130,7 +130,7 @@ In the walkthrough below, you will likely receive a different number to 000 as p
 { "url": "http://www.farmdrop.com" } (you are redirected to your original url)
 ```
 
-Leave the server running and visit localhost:9292/ using your web browser, you should see your short URL from the command line displayed on this page along with an input box to create further short URLs. Enter a URL into this box to create more.
+Leave the server running and visit localhost:9292 using your web browser, you should see your short URL from the command line displayed on this page along with an input box to create further short URLs. Enter a URL into this box to create more.
 
 Use the short URL in the path to visit your links eg. localhost:9292/frm000. You can also click directly on the displayed links.
 
